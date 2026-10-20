@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapeo Red Óptica FTTH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="page">
+    <h1 style="color: rgb(2, 93, 121);">Mapeo Interactivo de Red Óptica (FTTH)</h1>
+    <p class="instructions">Telecomunicaciones (IS-884)</p>
+
+    <div class="theme-controls">
+      <button id="themeToggle" class="theme-btn" aria-label="Cambiar tema">
+        <span class="icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </span>
+        Modo Noche
+      </button>
+    </div>
+
+    <div class="map-wrapper" id="mapContainer">
+      <img src="Images/Background/Mapeo de Redes_Diur.svg" class="main-map" alt="Arquitectura FTTH">
+
+      <svg class="map-overlay" viewBox="0 0 2752 1536" preserveAspectRatio="xMidYMid meet">
+        <polygon class="click-zone" data-key="olt" tabindex="0"
+          points="95,375 270,280 410,360 410,525 235,620 200,620 95,560" />
+        <polygon class="click-zone" data-key="odf" tabindex="0" points="470,445 590,480 590,600 575,620 470,580" />
+        <polygon class="click-zone" data-key="feeder" tabindex="0" points="525,865 1065,1230 1040,1255 515,905" />
+        <polygon class="click-zone" data-key="feeder" tabindex="0"
+          points="630,645 700,720 1105,720 1105,695 1155,695 1155,720 1388,720 1388,639 1428,639 1428,720 1620,720 1620,745 700,745 630,670" />
+        <polygon class="click-zone" data-key="odb" tabindex="0"
+          points="1075,540 1138,510 1170,537 1170,655 1112,690 1075,670" />
+        <polygon class="click-zone" data-key="fosc" tabindex="0"
+          points="1378,510 1389,500 1394,495 1427,500 1427,570 1437,580 1427,590 1427,623 1378,623 1378,590 1370,580 1378,570" />
+        <polygon class="click-zone" data-key="splitter" tabindex="0"
+          points="1675,640 1760,640 1765,650 1765,800 1668,800 1628,815 1628,648 1668,655" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="2382,470 2420,441 2500,505 2500,555 2474,570 2474,592 2450,618 2382,570" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="2374,1070 2408,1048 2465,1090 2427,1120 2374,1090" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="2080,1090 2120,1060 2140,1060 2180,1100 2180,1135 2145,1160 2080,1130" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="2206,1206 2235,1230 2269,1240 2316,1208 2313,1176 2255,1130 2228,1123 2199,1169" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="2090,1033 2087,1050 2053,1082 2029,1065 2002,1060 1973,1048 1975,999 2004,960 2041,972 2075,996" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="2291,666 2355,610 2384,610 2435,647 2437,681 2403,705 2384,693 2342,722 2296,698" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="2585,719 2634,751 2634,807 2590,848 2510,792 2505,763 2547,729 2566,741" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="2243,812 2272,814 2330,860 2328,887 2286,919 2267,902 2255,909 2223,894 2218,851" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="2352,914 2367,897 2389,904 2440,945 2440,979 2406,1006 2372,994 2340,977 2337,953" />
+        <polygon class="click-zone" data-key="ont" tabindex="0"
+          points="1569,882 1494,945 1491,1116 1569,1171 1647,1106 1649,943" />
+      </svg>
+
+      <!-- Imagen ref esquina -->
+      <div id="referenceImage" class="reference-image-container">
+        <div id="refTitle" class="ref-title">Título</div>
+        <img id="refImgSrc" src="" alt="Referencia">
+      </div>
+
+      <div id="infoCard" class="info-card" role="dialog" aria-live="polite">
+        <span class="close-card" aria-label="Cerrar detalle">&times;</span>
+        <div class="card-header">
+          <h3 id="cardTitle">Título</h3>
+          <span id="cardBadge" class="badge">Componente</span>
+        </div>
+        <div id="cardBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
